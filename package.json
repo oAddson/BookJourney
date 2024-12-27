@@ -1,0 +1,17 @@
+{
+  "name": "apollo-graphql-simple-server",
+  "packageManager": "yarn@4.5.3",
+  "type": "module",
+  "scripts": {
+    "compile": "tsc",
+    "start": "yarn compile && node ./dist/index.js"
+  },
+  "dependencies": {
+    "@apollo/server": "^4.11.2",
+    "graphql": "^16.10.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "typescript": "^5.7.2"
+  }
+}
