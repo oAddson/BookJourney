@@ -3,15 +3,19 @@
   "packageManager": "yarn@4.5.3",
   "type": "module",
   "scripts": {
-    "compile": "tsc",
-    "start": "yarn compile && node ./dist/index.js"
+    "compile": "tsc && tsc-alias",
+    "start": "yarn compile && node ./dist/index.js",
+    "clean": "rm -rf dist"
   },
   "dependencies": {
     "@apollo/server": "^4.11.2",
-    "graphql": "^16.10.0"
+    "graphql": "^16.10.0",
+    "sequelize": "^6.37.5",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
+    "tsc-alias": "1.8.10",
     "typescript": "^5.7.2"
   }
 }
