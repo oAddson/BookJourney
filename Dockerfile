@@ -7,6 +7,9 @@ RUN corepack enable
 # Set the working directory inside the container
 WORKDIR /app
 
+ENV NODE_ENV=development
+ENV PORT=4000
+
 # Copy package.json and yarn.lock files first to leverage Docker cache
 COPY package.json yarn.lock ./
 
@@ -16,13 +19,11 @@ RUN corepack prepare yarn@4.5.3 --activate
 # Install dependencies
 RUN yarn install
 
-# Copy the rest of the application files
+# Copy the rest of the application
 COPY . .
 
-# Build the TypeScript code
-RUN yarn compile
-
-# Expose the port your GraphQL server will run on
+# Expose the application port
 EXPOSE 4000
 
-CMD ["yarn", "start"]
+# Use nodemon for hot reloading
+CMD ["yarn", "dev"]
