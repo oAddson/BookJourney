@@ -27,11 +27,26 @@ clean:
 	@docker compose -f $(DOCKER_COMPOSE_FILE) down --volumes --remove-orphans
 	@echo "🧹 Cleaned up containers, volumes, and networks."
 
+shell:
+	@docker exec -it $$(docker ps -qf "name=graphql-server") sh
+	@echo "🔧 Entered the container shell."
+
+test:
+	@yarn test
+	@echo "✅ Tests completed."
+
+test-watch:
+	@yarn test:watch
+	@echo "👀 Running tests in watch mode."
+
 help:
 	@echo "🚀 Available commands:"
-	@echo "  make build      - Build Docker images."
-	@echo "  make up         - Start Docker containers in detached mode."
-	@echo "  make stop       - Stop running Docker containers."
-	@echo "  make start      - Start Docker containers."
-	@echo "  make logs       - Tail the logs of the containers."
-	@echo "  make clean      - Remove containers, volumes, and networks."
+	@echo "  make build        - Build Docker images."
+	@echo "  make clean        - Remove containers, volumes, and networks."
+	@echo "  make logs         - Tail the logs of the containers."
+	@echo "  make shell        - Enter the shell of the running graphql-server container."
+	@echo "  make start        - Start Docker containers."
+	@echo "  make stop         - Stop running Docker containers."
+	@echo "  make test         - Run tests with Jest."
+	@echo "  make test-watch   - Run tests in watch mode."
+	@echo "  make up           - Start Docker containers in detached mode."

@@ -7,8 +7,13 @@
     "module": "esnext",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "types": ["node"]
+    "types": ["node", "jest"],
+    "allowJs": true,
+    "strict": true,
+    "skipLibCheck": true
   },
+  "include": ["src", "tests"],
+  "exclude": ["node_modules", "dist"],
   "tsc-alias": {
     "resolveFullPaths": true,
     "verbose": false
