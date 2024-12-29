@@ -57,4 +57,4 @@ packages/server/src/generated/packageVersion.ts
 .env
 
 # Database
-db.sqlite
+*.sqlite

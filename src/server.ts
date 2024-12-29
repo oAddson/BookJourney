@@ -1,7 +1,7 @@
 import { ApolloServer } from '@apollo/server';
 import typeDefs from './schemas';
 import resolvers from './resolvers';
-import sequelize from './config/database';
+import sequelize from '../database/config/database';
 
 
 (async () => {

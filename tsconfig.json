@@ -12,7 +12,7 @@
     "strict": true,
     "skipLibCheck": true
   },
-  "include": ["src", "tests"],
+  "include": ["src", "tests", "database/config/config", "database/config/database.ts"],
   "exclude": ["node_modules", "dist"],
   "tsc-alias": {
     "resolveFullPaths": true,
