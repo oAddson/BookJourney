@@ -14,9 +14,13 @@ stop:
 	@docker compose -f $(DOCKER_COMPOSE_FILE) stop
 	@echo "🛑 Containers stopped."
 
-start:
+start-d:
 	@docker compose -f $(DOCKER_COMPOSE_FILE) stop
 	@docker compose -f $(DOCKER_COMPOSE_FILE) up -d
+	@echo "🔄 Containers started."
+
+start:
+	@docker compose -f $(DOCKER_COMPOSE_FILE) up
 	@echo "🔄 Containers started."
 
 logs:
@@ -46,6 +50,7 @@ help:
 	@echo "  make logs         - Tail the logs of the containers."
 	@echo "  make shell        - Enter the shell of the running graphql-server container."
 	@echo "  make start        - Start Docker containers."
+	@echo "  make start-d 		 - Start Docker containers in detached mode."
 	@echo "  make stop         - Stop running Docker containers."
 	@echo "  make test         - Run tests with Jest."
 	@echo "  make test-watch   - Run tests in watch mode."

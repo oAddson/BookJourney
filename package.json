@@ -4,8 +4,8 @@
   "type": "module",
   "scripts": {
     "compile": "tsc && tsc-alias",
-    "start": "yarn compile && node ./dist/index.js",
-    "dev": "nodemon --watch src --ext ts,graphql --exec \"yarn compile && node ./dist/index.js\"",
+    "start": "yarn compile && node ./dist/src/index.js",
+    "dev": "nodemon --watch src --ext ts,graphql --exec \"yarn compile && node ./dist/src/index.js\"",
     "test": "jest",
     "test:watch": "jest --watch",
     "clean": "rm -rf dist"
